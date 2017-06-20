@@ -44,7 +44,7 @@ public class EmployeePOJO {
 	}
 	
 	@ManyToOne
-	@JoinColumn(name = "empid")//name can be anything.
+	@JoinColumn(name = "deptid")//name can be anything.
 	public DepartmentPOJO getDepartment() {
 		return department;
 	}
@@ -53,9 +53,20 @@ public class EmployeePOJO {
 		this.department = department;
 	}
 	
+	public EmployeePOJO() {
+	}
+	
 	public EmployeePOJO(String empName, String empCity, double empSalary) {
 		this.empName = empName;
 		this.empCity = empCity;
 		this.empSalary = empSalary;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeePOJO [empID=" + empID + ", empName=" + empName + ", empCity=" + empCity + ", empSalary="
+				+ empSalary + "]";
+	}
+	
+	
 }
